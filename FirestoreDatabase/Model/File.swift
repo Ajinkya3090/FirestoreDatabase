@@ -21,4 +21,13 @@ class ProfileData {
         self.contactNumber = contactNumber
         self.password = password
     }
+    
+    convenience init (dictionary: [String : Any]) {
+        let name = dictionary["Name"] as! String? ?? ""
+        let emailId = dictionary["Email"] as! String? ?? ""
+        let contactNumber = dictionary["Contact Number"] as! String? ?? ""
+        let password = dictionary["Password"] as! String? ?? ""
+        
+        self.init(name: name, emailId: emailId, contactNumber: contactNumber, password: password)
+    }
 }

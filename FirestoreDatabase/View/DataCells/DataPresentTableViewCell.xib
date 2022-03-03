@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataPresentTableViewCell" rowHeight="211" id="KGk-i7-Jjw" customClass="DataPresentTableViewCell" customModule="FirestoreDatabase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="422" height="211"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="422" height="211"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avn-4I-QUk">
+                        <rect key="frame" x="1" y="0.5" width="420" height="210"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VGx-69-WVH">
+                                <rect key="frame" x="10" y="20" width="400" height="180"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xe-YD-bnl">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="41.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmailId :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URg-ZE-CRs">
+                                        <rect key="frame" x="0.0" y="46.5" width="400" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact No. :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-eH-AkA">
+                                        <rect key="frame" x="0.0" y="92.5" width="400" height="41.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHt-qK-BOc">
+                                        <rect key="frame" x="0.0" y="139" width="400" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VGx-69-WVH" firstAttribute="top" secondItem="Avn-4I-QUk" secondAttribute="top" constant="20" id="93y-Ke-7Ze"/>
+                            <constraint firstAttribute="trailing" secondItem="VGx-69-WVH" secondAttribute="trailing" constant="10" id="Jai-HV-QOp"/>
+                            <constraint firstItem="VGx-69-WVH" firstAttribute="leading" secondItem="Avn-4I-QUk" secondAttribute="leading" constant="10" id="Nxe-PR-k9i"/>
+                            <constraint firstAttribute="bottom" secondItem="VGx-69-WVH" secondAttribute="bottom" constant="10" id="tZm-3z-JOn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemRedColor"/>
+                <constraints>
+                    <constraint firstItem="Avn-4I-QUk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="4lS-UN-Yzz"/>
+                    <constraint firstAttribute="trailing" secondItem="Avn-4I-QUk" secondAttribute="trailing" constant="1" id="QXP-A5-BdP"/>
+                    <constraint firstItem="Avn-4I-QUk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="0.5" id="dPs-Ih-v4u"/>
+                    <constraint firstAttribute="bottom" secondItem="Avn-4I-QUk" secondAttribute="bottom" constant="0.5" id="ohh-ku-TDj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblContactNo" destination="ddI-eH-AkA" id="peO-dL-2LP"/>
+                <outlet property="lblEmail" destination="URg-ZE-CRs" id="jkN-c6-nF6"/>
+                <outlet property="lblName" destination="8Xe-YD-bnl" id="EnC-SH-6Hb"/>
+                <outlet property="lblPassword" destination="kHt-qK-BOc" id="zPO-cw-gKU"/>
+            </connections>
+            <point key="canvasLocation" x="205.79710144927537" y="138.95089285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

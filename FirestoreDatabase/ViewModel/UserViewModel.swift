@@ -11,7 +11,7 @@ import FirebaseCore
 import FirebaseFirestore
 class ValidationFields {
     
-    let firestoreDB = Firestore.firestore()
+    var firestoreDB = Firestore.firestore()
     
     var users = [ProfileData]()
     
@@ -30,36 +30,52 @@ class ValidationFields {
     
     func uploadDataToFirestore(data:ProfileData ,comlisherHandler: @escaping ()->(), failed: @escaping ()->()) {
         
-        let docRef = firestoreDB.collection("User").document(data.name!)
+        let uploadData = firestoreDB.collection("User").document(data.name!)
         
-        docRef.setData(["Name" : data.name, "Email" : data.emailId, "Contact Number" : data.contactNumber, "Password" : data.password]) { error in
+        uploadData.setData(["Name" : data.name ?? "", "Email" : data.emailId ?? "", "Contact Number" : data.contactNumber ?? "", "Password" : data.password ?? ""]) { error in
             if error == nil {
                 comlisherHandler()
             } else {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 failed()
             }
         }
         
     }
     
-    func getDataFromFirestore(comlisherHandler: @escaping ()->()) {
-        users.removeAll()
-        let docRef = firestoreDB.collection("User")
-        docRef.getDocuments { [weak self] snapshot, error in
-            if error == nil {
-                guard let data = snapshot else { return }
-                for document in data.documents {
-                    let userData  = document.data()
-                    guard let name = userData["Name"] as? String else {return}
-                    guard let emailId = userData["Email"] as? String else {return}
-                    guard let contactNumber = userData["Contact Number"] as? String else {return}
-                    guard let password = userData["Password"] as? String else {return}
-                    let user = ProfileData(name: name, emailId: emailId, contactNumber: contactNumber, password: password)
-                    self?.users.append(user)
-                    comlisherHandler()
-                }
+//    func getDataFromFirestore(comlisherHandler: @escaping ()->()) {
+//        users.removeAll()
+//        let getData = firestoreDB.collection("User")
+//        getData.getDocuments { [weak self] snapshot, error in
+//            if error == nil {
+//                guard let data = snapshot else { return }
+//                for document in data.documents {
+//                    let userData  = document.data()
+//                    guard let name = userData["Name"] as? String else {return}
+//                    guard let emailId = userData["Email"] as? String else {return}
+//                    guard let contactNumber = userData["Contact Number"] as? String else {return}
+//                    guard let password = userData["Password"] as? String else {return}
+//                    let user = ProfileData(name: name, emailId: emailId, contactNumber: contactNumber, password: password)
+//                    self?.users.append(user)
+//                    comlisherHandler()
+//                }
+//            }
+//        }
+//    }
+    
+    func getdataFrmFirebase(completed: @escaping ()->()) {
+        firestoreDB.collection("User").addSnapshotListener { querySnapshot, error in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return completed()
             }
+            self.users = []
+            for document in querySnapshot!.documents {
+                let profile = ProfileData(dictionary: document.data())
+                self.users.append(profile)
+                completed()
+            }
+            
         }
     }
 }

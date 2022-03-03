@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4D1312B55226501E71038490 /* Pods_FirestoreDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7423A26276323C4B60DBB35 /* Pods_FirestoreDatabase.framework */; };
+		8485CEDD27D0B233002964DC /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485CEDB27D0B233002964DC /* ProfileTableViewCell.swift */; };
+		8485CEDE27D0B233002964DC /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485CEDC27D0B233002964DC /* ProfileTableViewCell.xib */; };
+		8485CEE127D0B258002964DC /* DataPresentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485CEDF27D0B258002964DC /* DataPresentTableViewCell.swift */; };
+		8485CEE227D0B258002964DC /* DataPresentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485CEE027D0B258002964DC /* DataPresentTableViewCell.xib */; };
+		8485CEE427D0B6C7002964DC /* XibTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485CEE327D0B6C7002964DC /* XibTableViewController.swift */; };
 		849C138D27CF40620082C478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C138C27CF40620082C478 /* AppDelegate.swift */; };
 		849C138F27CF40620082C478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C138E27CF40620082C478 /* SceneDelegate.swift */; };
 		849C139127CF40620082C478 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C139027CF40620082C478 /* ViewController.swift */; };
@@ -23,6 +28,11 @@
 /* Begin PBXFileReference section */
 		35DE6A2318386D58E24E3E50 /* Pods-FirestoreDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreDatabase.release.xcconfig"; path = "Target Support Files/Pods-FirestoreDatabase/Pods-FirestoreDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		6B8B08510D86F34A3A702F8C /* Pods-FirestoreDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreDatabase.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreDatabase/Pods-FirestoreDatabase.debug.xcconfig"; sourceTree = "<group>"; };
+		8485CEDB27D0B233002964DC /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		8485CEDC27D0B233002964DC /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		8485CEDF27D0B258002964DC /* DataPresentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPresentTableViewCell.swift; sourceTree = "<group>"; };
+		8485CEE027D0B258002964DC /* DataPresentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataPresentTableViewCell.xib; sourceTree = "<group>"; };
+		8485CEE327D0B6C7002964DC /* XibTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibTableViewController.swift; sourceTree = "<group>"; };
 		849C138927CF40620082C478 /* FirestoreDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849C138C27CF40620082C478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849C138E27CF40620082C478 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8485CEE527D0C951002964DC /* DataCells */ = {
+			isa = PBXGroup;
+			children = (
+				8485CEDC27D0B233002964DC /* ProfileTableViewCell.xib */,
+				8485CEE027D0B258002964DC /* DataPresentTableViewCell.xib */,
+			);
+			path = DataCells;
+			sourceTree = "<group>";
+		};
 		849C138027CF40620082C478 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +94,6 @@
 				849C13A527CF4F5D0082C478 /* View */,
 				849C13A827CF625C0082C478 /* ViewModel */,
 				849C13A427CF4F370082C478 /* Controller */,
-				849C13AB27CF800F0082C478 /* Cell */,
 				849C13A327CF4F250082C478 /* Commen */,
 				849C139527CF40640082C478 /* Assets.xcassets */,
 				849C139727CF40640082C478 /* LaunchScreen.storyboard */,
@@ -106,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				849C139027CF40620082C478 /* ViewController.swift */,
+				8485CEE327D0B6C7002964DC /* XibTableViewController.swift */,
+				849C13AB27CF800F0082C478 /* Cell */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				849C139227CF40620082C478 /* Main.storyboard */,
+				8485CEE527D0C951002964DC /* DataCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				849C13AC27CF80610082C478 /* DisplayTableViewCell.swift */,
+				8485CEDB27D0B233002964DC /* ProfileTableViewCell.swift */,
+				8485CEDF27D0B258002964DC /* DataPresentTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -212,9 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				849C139927CF40640082C478 /* LaunchScreen.storyboard in Resources */,
+				8485CEE227D0B258002964DC /* DataPresentTableViewCell.xib in Resources */,
 				849C13AA27CF705F0082C478 /* GoogleService-Info.plist in Resources */,
 				849C139627CF40640082C478 /* Assets.xcassets in Resources */,
 				849C139427CF40620082C478 /* Main.storyboard in Resources */,
+				8485CEDE27D0B233002964DC /* ProfileTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,11 +293,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				849C13A727CF62460082C478 /* UserViewModel.swift in Sources */,
+				8485CEDD27D0B233002964DC /* ProfileTableViewCell.swift in Sources */,
 				849C139127CF40620082C478 /* ViewController.swift in Sources */,
 				849C13AD27CF80610082C478 /* DisplayTableViewCell.swift in Sources */,
+				8485CEE427D0B6C7002964DC /* XibTableViewController.swift in Sources */,
 				849C13A127CF4B5F0082C478 /* File.swift in Sources */,
 				849C138D27CF40620082C478 /* AppDelegate.swift in Sources */,
 				849C138F27CF40620082C478 /* SceneDelegate.swift in Sources */,
+				8485CEE127D0B258002964DC /* DataPresentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

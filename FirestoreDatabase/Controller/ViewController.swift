@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     var user = ValidationFields()
     
     @IBOutlet weak var name_TF: UITextField!
@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var password_TF: UITextField!
     @IBOutlet weak var addNewUserBtn: UIButton!
     @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var viewOutlet: UIView!
     
     
     var viewModel: ValidationFields?
@@ -25,16 +26,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ValidationFields()
-        self.updateData()
+       // self.updateData()
+        
+        
     }
     
-    func updateData() {
-        viewModel?.getDataFromFirestore {
-            DispatchQueue.main.async {
-                self.tblView.reloadData()
-            }
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel?.getdataFrmFirebase {
+            self.tblView.reloadData()
         }
     }
+    
+//    func updateData() {
+//        viewModel?.getDataFromFirestore {
+//            DispatchQueue.main.async {
+//                self.tblView.reloadData()
+//            }
+//        }
+//    }
     
     
     @IBAction func saveBtnAction(_ sender: Any) {
@@ -43,17 +52,27 @@ class ViewController: UIViewController {
         guard let validateData = ValidationFields.validateSignInInput(validation:userData)else {return }
         viewModel?.uploadDataToFirestore(data: validateData, comlisherHandler: {
             print("Data upload Successful")
-            self.updateData()
+            
+            //      self.updateData()
         }, failed: {
             print("Data upload Un-Successful")
-
         })
-       
-        
-        
+        if viewOutlet.tag == 0 {
+            viewOutlet.tag = 1
+            viewOutlet.isHidden = true
+        }
     }
     
     @IBAction func newUserAction(_ sender: Any) {
+        if viewOutlet.tag == 1 {
+            viewOutlet.tag = 0
+            viewOutlet.isHidden = false
+            
+            name_TF.text = ""
+            email_TF.text = ""
+            contactNumber_TF.text = ""
+            password_TF.text = ""
+        }
     }
     
 }

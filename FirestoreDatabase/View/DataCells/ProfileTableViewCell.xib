@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileTableViewCell" rowHeight="268" id="KGk-i7-Jjw" customClass="ProfileTableViewCell" customModule="FirestoreDatabase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="268"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="469" height="268"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVO-9e-FdS">
+                        <rect key="frame" x="0.0" y="0.0" width="469" height="258"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ug0-EZ-AVB">
+                                <rect key="frame" x="10" y="20" width="449" height="228"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="26E-3P-Wlr">
+                                        <rect key="frame" x="49.5" y="0.0" width="350" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="Cdn-i3-tiZ"/>
+                                            <constraint firstAttribute="height" constant="40" id="d0o-nM-cfe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EmailId" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lwo-ak-xPR">
+                                        <rect key="frame" x="49.5" y="47" width="350" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="58u-R4-iuK"/>
+                                            <constraint firstAttribute="width" constant="350" id="m29-U8-c9N"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-mx-Dmt">
+                                        <rect key="frame" x="49.5" y="94" width="350" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="XqS-on-k6f"/>
+                                            <constraint firstAttribute="height" constant="40" id="odM-Bq-iGM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-TB-HQe">
+                                        <rect key="frame" x="49.5" y="141" width="350" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2Gl-gl-ShF"/>
+                                            <constraint firstAttribute="width" constant="350" id="tkd-I8-oKT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1P-ff-wBc">
+                                        <rect key="frame" x="164.5" y="188" width="120" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gUb-B0-Pdc"/>
+                                            <constraint firstAttribute="width" constant="120" id="goV-dd-ow7"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <connections>
+                                            <action selector="save_Btn_Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dde-TS-CK9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ug0-EZ-AVB" firstAttribute="leading" secondItem="TVO-9e-FdS" secondAttribute="leading" constant="10" id="W7Q-Ya-A7K"/>
+                            <constraint firstItem="Ug0-EZ-AVB" firstAttribute="top" secondItem="TVO-9e-FdS" secondAttribute="top" constant="20" id="X3D-Iq-YQ7"/>
+                            <constraint firstAttribute="bottom" secondItem="Ug0-EZ-AVB" secondAttribute="bottom" constant="10" id="e7L-Ne-HQf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ug0-EZ-AVB" secondAttribute="trailing" constant="10" id="f5B-Cp-Lzk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="TVO-9e-FdS" secondAttribute="bottom" id="bih-W0-IyH"/>
+                    <constraint firstItem="TVO-9e-FdS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="c5A-Uc-4a8"/>
+                    <constraint firstItem="TVO-9e-FdS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="g3w-pg-Ino"/>
+                    <constraint firstAttribute="trailing" secondItem="TVO-9e-FdS" secondAttribute="trailing" id="jQI-Ig-661"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="save_Btn" destination="B1P-ff-wBc" id="4oV-lx-AP9"/>
+                <outlet property="tF_ContactNo" destination="rvz-mx-Dmt" id="BAe-lt-s8u"/>
+                <outlet property="tF_Email" destination="Lwo-ak-xPR" id="ElP-JA-Lfn"/>
+                <outlet property="tF_Name" destination="26E-3P-Wlr" id="vmx-mv-WzP"/>
+                <outlet property="tF_Password" destination="FF4-TB-HQe" id="wG1-Xd-yaz"/>
+            </connections>
+            <point key="canvasLocation" x="239.85507246376812" y="158.70535714285714"/>
+        </tableViewCell>
+    </objects>
+</document>
