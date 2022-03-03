@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ValidationFields()
-       // self.updateData()
+        // self.updateData()
         
         
     }
@@ -37,13 +37,13 @@ class ViewController: UIViewController {
         }
     }
     
-//    func updateData() {
-//        viewModel?.getDataFromFirestore {
-//            DispatchQueue.main.async {
-//                self.tblView.reloadData()
-//            }
-//        }
-//    }
+    //    func updateData() {
+    //        viewModel?.getDataFromFirestore {
+    //            DispatchQueue.main.async {
+    //                self.tblView.reloadData()
+    //            }
+    //        }
+    //    }
     
     
     @IBAction func saveBtnAction(_ sender: Any) {
