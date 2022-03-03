@@ -38,7 +38,7 @@ extension XibTableViewController : UITableViewDataSource,UITableViewDelegate {
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          if section == 0{
              return 1
-         }else {
+         } else {
              return self.viewModel?.users.count ?? 0
          }
     }
@@ -47,7 +47,7 @@ extension XibTableViewController : UITableViewDataSource,UITableViewDelegate {
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
          if indexPath.section == 0 {
-             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath)as! ProfileTableViewCell
+             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTa bleViewCell", for: indexPath) as? ProfileTableViewCell else {return UITableViewCell()}
              return cell
          }else {
              let cell = tableView.dequeueReusableCell(withIdentifier: "DataPresentTableViewCell", for: indexPath)as! DataPresentTableViewCell
