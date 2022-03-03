@@ -8,7 +8,7 @@
 import UIKit
 
 class XibTableViewController: UIViewController {
-
+    
     @IBOutlet weak var tblViewController: UITableView!
     var viewModel: ValidationFields?
     
@@ -16,7 +16,7 @@ class XibTableViewController: UIViewController {
         super.viewDidLoad()
         
         self.tblViewController.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
-       
+        
         self.tblViewController.register(UINib(nibName: "DataPresentTableViewCell", bundle: nil), forCellReuseIdentifier: "DataPresentTableViewCell")
     }
     
@@ -26,35 +26,34 @@ class XibTableViewController: UIViewController {
             self.tblViewController.reloadData()
         }
     }
-
+    
 }
 
-    
+
 extension XibTableViewController : UITableViewDataSource,UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         if section == 0{
-             return 1
-         } else {
-             return self.viewModel?.users.count ?? 0
-         }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0{
+            return 1
+        } else {
+            return self.viewModel?.users.count ?? 0
+        }
     }
-
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         if indexPath.section == 0 {
-             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTa bleViewCell", for: indexPath) as? ProfileTableViewCell else {return UITableViewCell()}
-             return cell
-         }else {
-             let cell = tableView.dequeueReusableCell(withIdentifier: "DataPresentTableViewCell", for: indexPath)as! DataPresentTableViewCell
-             guard let user = viewModel?.users[indexPath.row] else {return UITableViewCell()}
-             cell.fetchData(data: user)
-             return cell
-         }
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTa bleViewCell", for: indexPath) as? ProfileTableViewCell else {return UITableViewCell()}
+            return cell
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DataPresentTableViewCell", for: indexPath)as! DataPresentTableViewCell
+            guard let user = viewModel?.users[indexPath.row] else {return UITableViewCell()}
+            cell.fetchData(data: user)
+            return cell
+        }
         
     }
 }
