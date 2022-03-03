@@ -43,25 +43,25 @@ class ValidationFields {
         
     }
     
-//    func getDataFromFirestore(comlisherHandler: @escaping ()->()) {
-//        users.removeAll()
-//        let getData = firestoreDB.collection("User")
-//        getData.getDocuments { [weak self] snapshot, error in
-//            if error == nil {
-//                guard let data = snapshot else { return }
-//                for document in data.documents {
-//                    let userData  = document.data()
-//                    guard let name = userData["Name"] as? String else {return}
-//                    guard let emailId = userData["Email"] as? String else {return}
-//                    guard let contactNumber = userData["Contact Number"] as? String else {return}
-//                    guard let password = userData["Password"] as? String else {return}
-//                    let user = ProfileData(name: name, emailId: emailId, contactNumber: contactNumber, password: password)
-//                    self?.users.append(user)
-//                    comlisherHandler()
-//                }
-//            }
-//        }
-//    }
+    //    func getDataFromFirestore(comlisherHandler: @escaping ()->()) {
+    //        users.removeAll()
+    //        let getData = firestoreDB.collection("User")
+    //        getData.getDocuments { [weak self] snapshot, error in
+    //            if error == nil {
+    //                guard let data = snapshot else { return }
+    //                for document in data.documents {
+    //                    let userData  = document.data()
+    //                    guard let name = userData["Name"] as? String else {return}
+    //                    guard let emailId = userData["Email"] as? String else {return}
+    //                    guard let contactNumber = userData["Contact Number"] as? String else {return}
+    //                    guard let password = userData["Password"] as? String else {return}
+    //                    let user = ProfileData(name: name, emailId: emailId, contactNumber: contactNumber, password: password)
+    //                    self?.users.append(user)
+    //                    comlisherHandler()
+    //                }
+    //            }
+    //        }
+    //    }
     
     func getdataFrmFirebase(completed: @escaping ()->()) {
         firestoreDB.collection("User").addSnapshotListener { querySnapshot, error in
