@@ -9,11 +9,28 @@ import Foundation
 import FirebaseDatabase
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseStorage
+
+protocol GetImage: AnyObject {
+    func updateCollection()
+}
+
 class ValidationFields {
     
     var firestoreDB = Firestore.firestore()
+
+    let storageRefernce = Storage.storage().reference()
     
     var users = [ProfileData]()
+    
+    weak var delegate: GetImage?
+    
+    var imageArr: [Data] = [Data]() {
+        didSet {
+            self.delegate?.updateCollection()
+        }
+    }
+    
     
     static func validateSignInInput(validation : ProfileData) ->ProfileData? {
         guard let name = validation.name else {return nil }
@@ -78,4 +95,29 @@ class ValidationFields {
             
         }
     }
+    
+    func dwnloadImgFrmStorage() {
+        storageRefernce.child("Image").listAll { storageRef, error in
+            for image in storageRef.items {
+                let path = image.fullPath
+                print(image.fullPath)
+                self.storageRefernce.child(path).downloadURL { url, err in
+                    guard let url = url else {
+                        return
+                    }
+                    
+                    URLSession.shared.dataTask(with: url) { data, respo, err in
+                        DispatchQueue.main.async {
+                            guard let data = data else {
+                                return
+                            }
+                            self.imageArr.append(data)
+                        }
+                    }.resume()
+                }
+            }
+        }
+    }
 }
+
+

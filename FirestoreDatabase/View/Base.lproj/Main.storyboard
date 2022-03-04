@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ium-a6-RCt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5YP-Di-t3X">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -249,6 +250,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f27-sa-iHo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="886" y="70"/>
+        </scene>
+        <!--Firebase Storage View Controller-->
+        <scene sceneID="v1j-d2-MNz">
+            <objects>
+                <viewController storyboardIdentifier="FirebaseStorageViewController" id="G3s-y0-jRi" customClass="FirebaseStorageViewController" customModule="FirestoreDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6K6-tE-DT4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-7K-YZN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="RxJ-dM-Xzr">
+                                    <size key="itemSize" width="186" height="197"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StorageCollectionViewCell" id="JY5-yz-CfI" customClass="StorageCollectionViewCell" customModule="FirestoreDatabase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="197"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PUQ-kQ-fQ8">
+                                            <rect key="frame" x="0.0" y="0.0" width="186" height="197"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXs-92-55q">
+                                                    <rect key="frame" x="5" y="5" width="176" height="187"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sXs-92-55q" firstAttribute="leading" secondItem="PUQ-kQ-fQ8" secondAttribute="leading" constant="5" id="01u-ot-gii"/>
+                                                <constraint firstAttribute="bottom" secondItem="sXs-92-55q" secondAttribute="bottom" constant="5" id="KbS-g8-Bi1"/>
+                                                <constraint firstAttribute="trailing" secondItem="sXs-92-55q" secondAttribute="trailing" constant="5" id="SIg-OD-X5V"/>
+                                                <constraint firstItem="sXs-92-55q" firstAttribute="top" secondItem="PUQ-kQ-fQ8" secondAttribute="top" constant="5" id="kBc-ve-qre"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="186" height="197"/>
+                                        <connections>
+                                            <outlet property="img" destination="sXs-92-55q" id="1Yf-wI-zJk"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="G3s-y0-jRi" id="FbM-Vn-MqH"/>
+                                    <outlet property="delegate" destination="G3s-y0-jRi" id="GFx-OX-bwO"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CMV-31-F5N"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bfv-7K-YZN" firstAttribute="leading" secondItem="CMV-31-F5N" secondAttribute="leading" id="CDK-Vq-BZq"/>
+                            <constraint firstItem="CMV-31-F5N" firstAttribute="trailing" secondItem="bfv-7K-YZN" secondAttribute="trailing" id="ChM-qv-Ohn"/>
+                            <constraint firstItem="bfv-7K-YZN" firstAttribute="top" secondItem="CMV-31-F5N" secondAttribute="top" id="FxR-GT-Vpx"/>
+                            <constraint firstItem="CMV-31-F5N" firstAttribute="bottom" secondItem="bfv-7K-YZN" secondAttribute="bottom" id="o2U-oj-797"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rdX-dv-2Cg">
+                        <barButtonItem key="rightBarButtonItem" title="Upload Image" id="cqe-cq-IdK">
+                            <connections>
+                                <action selector="uploadToCStorage:" destination="G3s-y0-jRi" id="M9b-Tu-eJL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="bfv-7K-YZN" id="R2t-eP-h2Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMo-CF-WbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3073.913043478261" y="77.678571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qdt-Dq-ZDY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5YP-Di-t3X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FFU-YZ-zcY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G3s-y0-jRi" kind="relationship" relationship="rootViewController" id="Cl9-ei-LJe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVc-eL-GXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2163.768115942029" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
