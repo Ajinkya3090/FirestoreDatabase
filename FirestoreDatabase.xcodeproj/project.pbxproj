@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4D1312B55226501E71038490 /* Pods_FirestoreDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7423A26276323C4B60DBB35 /* Pods_FirestoreDatabase.framework */; };
-		84814E7427D1F74C0009C4ED /* FirebaseStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84814E7327D1F74C0009C4ED /* FirebaseStorageViewController.swift */; };
+		8422574127D5DE0D00B8D5AA /* FirebaseStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84814E7327D1F74C0009C4ED /* FirebaseStorageViewController.swift */; };
+		8422574527D5DED300B8D5AA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422574227D5DED300B8D5AA /* ProfileTableViewCell.swift */; };
+		8422574627D5DED300B8D5AA /* DataPresentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422574327D5DED300B8D5AA /* DataPresentTableViewCell.swift */; };
+		8422574727D5DED300B8D5AA /* DisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422574427D5DED300B8D5AA /* DisplayTableViewCell.swift */; };
+		8422574B27D5E35600B8D5AA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422574927D5E35600B8D5AA /* CollectionViewCell.swift */; };
+		8422574C27D5E35600B8D5AA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422574A27D5E35600B8D5AA /* CollectionViewCell.xib */; };
 		84814E7627D21DBC0009C4ED /* StorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84814E7527D21DBC0009C4ED /* StorageCollectionViewCell.swift */; };
-		8485CEDD27D0B233002964DC /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485CEDB27D0B233002964DC /* ProfileTableViewCell.swift */; };
 		8485CEDE27D0B233002964DC /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485CEDC27D0B233002964DC /* ProfileTableViewCell.xib */; };
-		8485CEE127D0B258002964DC /* DataPresentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485CEDF27D0B258002964DC /* DataPresentTableViewCell.swift */; };
 		8485CEE227D0B258002964DC /* DataPresentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485CEE027D0B258002964DC /* DataPresentTableViewCell.xib */; };
 		8485CEE427D0B6C7002964DC /* XibTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485CEE327D0B6C7002964DC /* XibTableViewController.swift */; };
 		849C138D27CF40620082C478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C138C27CF40620082C478 /* AppDelegate.swift */; };
@@ -24,17 +27,20 @@
 		849C13A127CF4B5F0082C478 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C13A027CF4B5F0082C478 /* File.swift */; };
 		849C13A727CF62460082C478 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C13A627CF62460082C478 /* UserViewModel.swift */; };
 		849C13AA27CF705F0082C478 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849C13A927CF705F0082C478 /* GoogleService-Info.plist */; };
-		849C13AD27CF80610082C478 /* DisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C13AC27CF80610082C478 /* DisplayTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		35DE6A2318386D58E24E3E50 /* Pods-FirestoreDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreDatabase.release.xcconfig"; path = "Target Support Files/Pods-FirestoreDatabase/Pods-FirestoreDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		6B8B08510D86F34A3A702F8C /* Pods-FirestoreDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreDatabase.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreDatabase/Pods-FirestoreDatabase.debug.xcconfig"; sourceTree = "<group>"; };
+		8422574227D5DED300B8D5AA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		8422574327D5DED300B8D5AA /* DataPresentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPresentTableViewCell.swift; sourceTree = "<group>"; };
+		8422574427D5DED300B8D5AA /* DisplayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTableViewCell.swift; sourceTree = "<group>"; };
+		8422574927D5E35600B8D5AA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		8422574A27D5E35600B8D5AA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		8422574D27D619B800B8D5AA /* FirestoreDatabase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirestoreDatabase.entitlements; sourceTree = "<group>"; };
 		84814E7327D1F74C0009C4ED /* FirebaseStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageViewController.swift; sourceTree = "<group>"; };
 		84814E7527D21DBC0009C4ED /* StorageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCollectionViewCell.swift; sourceTree = "<group>"; };
-		8485CEDB27D0B233002964DC /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		8485CEDC27D0B233002964DC /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
-		8485CEDF27D0B258002964DC /* DataPresentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPresentTableViewCell.swift; sourceTree = "<group>"; };
 		8485CEE027D0B258002964DC /* DataPresentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataPresentTableViewCell.xib; sourceTree = "<group>"; };
 		8485CEE327D0B6C7002964DC /* XibTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibTableViewController.swift; sourceTree = "<group>"; };
 		849C138927CF40620082C478 /* FirestoreDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +54,6 @@
 		849C13A027CF4B5F0082C478 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		849C13A627CF62460082C478 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		849C13A927CF705F0082C478 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		849C13AC27CF80610082C478 /* DisplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTableViewCell.swift; sourceTree = "<group>"; };
 		E7423A26276323C4B60DBB35 /* Pods_FirestoreDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,10 +69,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84814E7727D2273D0009C4ED /* CollectionCells */ = {
+		8422574827D5DF0300B8D5AA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				84814E7527D21DBC0009C4ED /* StorageCollectionViewCell.swift */,
+				8422574327D5DED300B8D5AA /* DataPresentTableViewCell.swift */,
+				8422574427D5DED300B8D5AA /* DisplayTableViewCell.swift */,
+				8422574227D5DED300B8D5AA /* ProfileTableViewCell.swift */,
+				8422574927D5E35600B8D5AA /* CollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84814E7727D2273D0009C4ED /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				8422574A27D5E35600B8D5AA /* CollectionViewCell.xib */,
 			);
 			path = CollectionCells;
 			sourceTree = "<group>";
@@ -111,6 +128,7 @@
 		849C138B27CF40620082C478 /* FirestoreDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				8422574D27D619B800B8D5AA /* FirestoreDatabase.entitlements */,
 				849C13A227CF4F140082C478 /* Model */,
 				849C13A527CF4F5D0082C478 /* View */,
 				849C13A827CF625C0082C478 /* ViewModel */,
@@ -147,7 +165,7 @@
 				849C139027CF40620082C478 /* ViewController.swift */,
 				8485CEE327D0B6C7002964DC /* XibTableViewController.swift */,
 				84814E7327D1F74C0009C4ED /* FirebaseStorageViewController.swift */,
-				849C13AB27CF800F0082C478 /* Cell */,
+				8422574827D5DF0300B8D5AA /* Cell */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,16 +185,6 @@
 				849C13A627CF62460082C478 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		849C13AB27CF800F0082C478 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				849C13AC27CF80610082C478 /* DisplayTableViewCell.swift */,
-				8485CEDB27D0B233002964DC /* ProfileTableViewCell.swift */,
-				8485CEDF27D0B258002964DC /* DataPresentTableViewCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		D2EFA73B3F9765F984C81804 /* Frameworks */ = {
@@ -257,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849C139927CF40640082C478 /* LaunchScreen.storyboard in Resources */,
+				8422574C27D5E35600B8D5AA /* CollectionViewCell.xib in Resources */,
 				8485CEE227D0B258002964DC /* DataPresentTableViewCell.xib in Resources */,
 				849C13AA27CF705F0082C478 /* GoogleService-Info.plist in Resources */,
 				849C139627CF40640082C478 /* Assets.xcassets in Resources */,
@@ -314,17 +323,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8422574727D5DED300B8D5AA /* DisplayTableViewCell.swift in Sources */,
 				849C13A727CF62460082C478 /* UserViewModel.swift in Sources */,
-				8485CEDD27D0B233002964DC /* ProfileTableViewCell.swift in Sources */,
+				8422574B27D5E35600B8D5AA /* CollectionViewCell.swift in Sources */,
 				849C139127CF40620082C478 /* ViewController.swift in Sources */,
-				84814E7427D1F74C0009C4ED /* FirebaseStorageViewController.swift in Sources */,
-				849C13AD27CF80610082C478 /* DisplayTableViewCell.swift in Sources */,
 				8485CEE427D0B6C7002964DC /* XibTableViewController.swift in Sources */,
+				8422574627D5DED300B8D5AA /* DataPresentTableViewCell.swift in Sources */,
+				8422574527D5DED300B8D5AA /* ProfileTableViewCell.swift in Sources */,
+				8422574127D5DE0D00B8D5AA /* FirebaseStorageViewController.swift in Sources */,
 				849C13A127CF4B5F0082C478 /* File.swift in Sources */,
 				849C138D27CF40620082C478 /* AppDelegate.swift in Sources */,
 				84814E7627D21DBC0009C4ED /* StorageCollectionViewCell.swift in Sources */,
 				849C138F27CF40620082C478 /* SceneDelegate.swift in Sources */,
-				8485CEE127D0B258002964DC /* DataPresentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,8 +482,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FirestoreDatabase/FirestoreDatabase.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9DYFDAZPPC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirestoreDatabase/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Permission to access Photo Gallery";
@@ -501,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FirestoreDatabase/FirestoreDatabase.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

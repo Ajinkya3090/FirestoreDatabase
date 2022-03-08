@@ -46,7 +46,7 @@ extension XibTableViewController : UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTa bleViewCell", for: indexPath) as? ProfileTableViewCell else {return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as? ProfileTableViewCell else {return UITableViewCell()}
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataPresentTableViewCell", for: indexPath)as! DataPresentTableViewCell

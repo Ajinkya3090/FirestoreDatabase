@@ -17,8 +17,10 @@ protocol GetImage: AnyObject {
 
 class ValidationFields {
     
+    var url = [URL]()
+    
     var firestoreDB = Firestore.firestore()
-
+    
     let storageRefernce = Storage.storage().reference()
     
     var users = [ProfileData]()
@@ -31,6 +33,7 @@ class ValidationFields {
         }
     }
     
+    // Profile Upload and Showing Function
     
     static func validateSignInInput(validation : ProfileData) ->ProfileData? {
         guard let name = validation.name else {return nil }
@@ -80,6 +83,9 @@ class ValidationFields {
     //        }
     //    }
     
+    
+    // Image Uplaod and Download Function
+    
     func getdataFrmFirebase(completed: @escaping ()->()) {
         firestoreDB.collection("User").addSnapshotListener { querySnapshot, error in
             guard error == nil else {
@@ -105,7 +111,6 @@ class ValidationFields {
                     guard let url = url else {
                         return
                     }
-                    
                     URLSession.shared.dataTask(with: url) { data, respo, err in
                         DispatchQueue.main.async {
                             guard let data = data else {
@@ -114,6 +119,34 @@ class ValidationFields {
                             self.imageArr.append(data)
                         }
                     }.resume()
+                }
+            }
+        }
+    }
+    
+    // File Updload and Download Function
+    
+    func uploadLocalData(path: URL,extensionString:String) {
+        let riversRef = storageRefernce.child("File").child(UUID().uuidString + extensionString)
+        let uploadTask = riversRef.putFile(from: path, metadata: StorageMetadata()) { metadata, error in
+            guard metadata != nil else {
+                return
+            }
+        }
+    }
+    
+    func downloadingPdf(completion:@escaping(_ url : [URL])->()){
+        storageRefernce.child("File").listAll { storeRef, error in
+            for item in storeRef.items{
+                let path = item.fullPath
+                print(item.fullPath)
+                self.storageRefernce.child(path).downloadURL { url, err in
+                    guard let url = url else {
+                        return
+                    }
+                    self.url.append(url)
+                    print(url)
+                    completion(self.url)
                 }
             }
         }
