@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
 
 class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var imageCollectionViewModel : ValidationFields!
+    var collectionViewModel : ValidationFields!
     
     @IBOutlet weak var selectionSegCntrol: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -26,13 +26,13 @@ class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageCollectionViewModel = ValidationFields()
-        imageCollectionViewModel?.delegate = self
-        imageCollectionViewModel?.dwnloadImgFrmStorage()
+        collectionViewModel = ValidationFields()
+        collectionViewModel?.delegate = self
+        collectionViewModel?.dwnloadImgFrmStorage()
         
         selectionSegCntrol.selectedSegmentIndex = 0
         
-        imageCollectionViewModel.downloadingPdf { url in // Downloading file
+        collectionViewModel.downloadingPdf { url in // Downloading file
             self.url = url
             print(url)
             //            self.collectionView.reloadData()
@@ -78,9 +78,9 @@ class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDe
         guard let image = info[.editedImage] as? UIImage else { return }
         guard let data = image.pngData() else { return }
         
-        imageCollectionViewModel?.storageRefernce.child("Image").child(UUID().uuidString + ".jpg").putData(data, metadata: nil) {
+        collectionViewModel?.storageRefernce.child("Image").child(UUID().uuidString + ".jpg").putData(data, metadata: nil) {
             [weak self] storageData, error in
-            self?.imageCollectionViewModel!.imageArr.append(data)
+            self?.collectionViewModel!.imageArr.append(data)
         }
         print("//////////////", info.values)
         dismiss(animated: true, completion: nil)
@@ -101,16 +101,16 @@ extension FirebaseStorageViewController: UIDocumentPickerDelegate, UIDocumentMen
         let last = myURL.pathExtension
         self.url.append(myURL)
         if last == "pdf"  {
-            imageCollectionViewModel.uploadLocalData(path: myURL, extensionString: ".pdf")
+            collectionViewModel.uploadLocalData(path: myURL, extensionString: ".pdf")
         }
         else if last == "doc"{
-            imageCollectionViewModel.uploadLocalData(path: myURL, extensionString: ".doc")
+            collectionViewModel.uploadLocalData(path: myURL, extensionString: ".doc")
         }
         else if last == "docx"{
-            imageCollectionViewModel.uploadLocalData(path: myURL, extensionString: ".docx")
+            collectionViewModel.uploadLocalData(path: myURL, extensionString: ".docx")
             
         } else if last == "xlsx"{
-            imageCollectionViewModel.uploadLocalData(path: myURL, extensionString: ".xlsx")
+            collectionViewModel.uploadLocalData(path: myURL, extensionString: ".xlsx")
         }
         
         func documentPicker(controller: UIDocumentPickerViewController, didPickDocumentAtURL url: NSURL) {
@@ -151,7 +151,7 @@ extension FirebaseStorageViewController : UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if selectionSegCntrol.selectedSegmentIndex == 0 {
-            return imageCollectionViewModel?.imageArr.count ?? 0
+            return collectionViewModel?.imageArr.count ?? 0
         } else {
             return url.count
         }
@@ -159,7 +159,7 @@ extension FirebaseStorageViewController : UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if selectionSegCntrol.selectedSegmentIndex == 0 {
-            guard let imgData = imageCollectionViewModel?.imageArr[indexPath.row] else { return UICollectionViewCell()}
+            guard let imgData = collectionViewModel?.imageArr[indexPath.row] else { return UICollectionViewCell()}
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorageCollectionViewCell", for: indexPath) as? StorageCollectionViewCell {
                 cell.img.widthAnchor.constraint(equalToConstant: ( width/2-10)).isActive = true
                 cell.img.heightAnchor.constraint(equalToConstant:( width/2-10)).isActive = true
