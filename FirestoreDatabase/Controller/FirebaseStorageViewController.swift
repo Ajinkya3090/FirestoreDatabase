@@ -18,7 +18,11 @@ class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDe
     
     var width = UIScreen.main.bounds.size.width
     
-    var url = [URL]()
+    var url: [URL] = [URL](){
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +35,7 @@ class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDe
         imageCollectionViewModel.downloadingPdf { url in // Downloading file
             self.url = url
             print(url)
-//            self.collectionView.reloadData()
+            //            self.collectionView.reloadData()
         }
         
         // Register Collection Nib file
@@ -62,7 +66,7 @@ class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDe
     
     @IBAction func segTappedAction(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            collectionView.reloadData()
+            //collectionView.reloadData()
         } else if sender.selectedSegmentIndex == 1 {
             collectionView.reloadData()
         }
