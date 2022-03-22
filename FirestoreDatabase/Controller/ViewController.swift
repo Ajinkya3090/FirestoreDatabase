@@ -11,15 +11,14 @@ class ViewController: UIViewController {
     
     var user = ValidationFields()
     
-    @IBOutlet weak var name_TF: UITextField!
-    @IBOutlet weak var email_TF: UITextField!
-    @IBOutlet weak var contactNumber_TF: UITextField!
-    @IBOutlet weak var saveBtn: UIButton!
-    @IBOutlet weak var password_TF: UITextField!
-    @IBOutlet weak var addNewUserBtn: UIButton!
-    @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var tf_Name: UITextField!
+    @IBOutlet weak var tf_Email: UITextField!
+    @IBOutlet weak var tf_ContactNumber: UITextField!
+    @IBOutlet weak var btn_Save: UIButton!
+    @IBOutlet weak var tf_Password: UITextField!
+    @IBOutlet weak var btn_AddNewsUser: UIButton!
+    @IBOutlet weak var view_tblView: UITableView!
     @IBOutlet weak var viewOutlet: UIView!
-    
     
     var viewModel: ValidationFields?
     
@@ -27,16 +26,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         viewModel = ValidationFields()
         // self.updateData()
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         viewModel?.getdataFrmFirebase {
-            self.tblView.reloadData()
+            self.view_tblView.reloadData()
         }
     }
-    
     //    func updateData() {
     //        viewModel?.getDataFromFirestore {
     //            DispatchQueue.main.async {
@@ -45,14 +41,11 @@ class ViewController: UIViewController {
     //        }
     //    }
     
-    
     @IBAction func saveBtnAction(_ sender: Any) {
-        
-        let userData = ProfileData(name: name_TF.text!, emailId: email_TF.text!, contactNumber: contactNumber_TF.text!, password: password_TF.text!)
+        let userData = ProfileData(name: tf_Name.text!, emailId: tf_Email.text!, contactNumber: tf_ContactNumber.text!, password: tf_Password.text!)
         guard let validateData = ValidationFields.validateSignInInput(validation:userData)else {return }
         viewModel?.uploadDataToFirestore(data: validateData, comlisherHandler: {
             print("Data upload Successful")
-            
             //      self.updateData()
         }, failed: {
             print("Data upload Un-Successful")
@@ -68,13 +61,12 @@ class ViewController: UIViewController {
             viewOutlet.tag = 0
             viewOutlet.isHidden = false
             
-            name_TF.text = ""
-            email_TF.text = ""
-            contactNumber_TF.text = ""
-            password_TF.text = ""
+            tf_Name.text = ""
+            tf_Email.text = ""
+            tf_ContactNumber.text = ""
+            tf_Password.text = ""
         }
     }
-    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
@@ -83,13 +75,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tblView.dequeueReusableCell(withIdentifier: "DisplayTableViewCell", for : indexPath) as? DisplayTableViewCell {
+        if let cell = view_tblView.dequeueReusableCell(withIdentifier: "DisplayTableViewCell", for : indexPath) as? DisplayTableViewCell {
             guard let user = viewModel?.users[indexPath.row] else {return UITableViewCell()}
             cell.fetchData(data: user)
             return cell
         }
         return UITableViewCell()
     }
-    
-    
 }

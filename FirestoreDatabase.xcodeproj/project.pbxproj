@@ -14,6 +14,8 @@
 		8422574727D5DED300B8D5AA /* DisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422574427D5DED300B8D5AA /* DisplayTableViewCell.swift */; };
 		8422574B27D5E35600B8D5AA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422574927D5E35600B8D5AA /* CollectionViewCell.swift */; };
 		8422574C27D5E35600B8D5AA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422574A27D5E35600B8D5AA /* CollectionViewCell.xib */; };
+		8468476E27DB18450065851B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8468476D27DB18450065851B /* GoogleService-Info.plist */; };
+		847F7C0627E1E0470004083B /* TranslatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F7C0527E1E0470004083B /* TranslatorViewModel.swift */; };
 		84814E7627D21DBC0009C4ED /* StorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84814E7527D21DBC0009C4ED /* StorageCollectionViewCell.swift */; };
 		8485CEDE27D0B233002964DC /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485CEDC27D0B233002964DC /* ProfileTableViewCell.xib */; };
 		8485CEE227D0B258002964DC /* DataPresentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485CEE027D0B258002964DC /* DataPresentTableViewCell.xib */; };
@@ -26,7 +28,11 @@
 		849C139927CF40640082C478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849C139727CF40640082C478 /* LaunchScreen.storyboard */; };
 		849C13A127CF4B5F0082C478 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C13A027CF4B5F0082C478 /* File.swift */; };
 		849C13A727CF62460082C478 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C13A627CF62460082C478 /* UserViewModel.swift */; };
-		849C13AA27CF705F0082C478 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849C13A927CF705F0082C478 /* GoogleService-Info.plist */; };
+		84C0999B27E2EB6500BA919D /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0999A27E2EB6500BA919D /* TranslationViewController.swift */; };
+		84F67A6A27DF4042003A0A95 /* EmailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F67A6927DF4042003A0A95 /* EmailManager.swift */; };
+		84FF9B7127D8A20600BC8C72 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9B7027D8A20600BC8C72 /* LogInViewController.swift */; };
+		84FF9B7327D8A23B00BC8C72 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9B7227D8A23B00BC8C72 /* SignUpViewController.swift */; };
+		84FF9B7527D8A53900BC8C72 /* Email&PasswordAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9B7427D8A53900BC8C72 /* Email&PasswordAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,8 @@
 		8422574927D5E35600B8D5AA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8422574A27D5E35600B8D5AA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		8422574D27D619B800B8D5AA /* FirestoreDatabase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirestoreDatabase.entitlements; sourceTree = "<group>"; };
+		8468476D27DB18450065851B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		847F7C0527E1E0470004083B /* TranslatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModel.swift; sourceTree = "<group>"; };
 		84814E7327D1F74C0009C4ED /* FirebaseStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageViewController.swift; sourceTree = "<group>"; };
 		84814E7527D21DBC0009C4ED /* StorageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCollectionViewCell.swift; sourceTree = "<group>"; };
 		8485CEDC27D0B233002964DC /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
@@ -53,7 +61,11 @@
 		849C139A27CF40640082C478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849C13A027CF4B5F0082C478 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		849C13A627CF62460082C478 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		849C13A927CF705F0082C478 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84C0999A27E2EB6500BA919D /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
+		84F67A6927DF4042003A0A95 /* EmailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailManager.swift; sourceTree = "<group>"; };
+		84FF9B7027D8A20600BC8C72 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		84FF9B7227D8A23B00BC8C72 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		84FF9B7427D8A53900BC8C72 /* Email&PasswordAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Email&PasswordAuth.swift"; sourceTree = "<group>"; };
 		E7423A26276323C4B60DBB35 /* Pods_FirestoreDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,7 +148,6 @@
 				849C13A327CF4F250082C478 /* Commen */,
 				849C139527CF40640082C478 /* Assets.xcassets */,
 				849C139727CF40640082C478 /* LaunchScreen.storyboard */,
-				849C13A927CF705F0082C478 /* GoogleService-Info.plist */,
 				849C139A27CF40640082C478 /* Info.plist */,
 			);
 			path = FirestoreDatabase;
@@ -153,6 +164,7 @@
 		849C13A327CF4F250082C478 /* Commen */ = {
 			isa = PBXGroup;
 			children = (
+				8468476D27DB18450065851B /* GoogleService-Info.plist */,
 				849C138C27CF40620082C478 /* AppDelegate.swift */,
 				849C138E27CF40620082C478 /* SceneDelegate.swift */,
 			);
@@ -163,8 +175,11 @@
 			isa = PBXGroup;
 			children = (
 				849C139027CF40620082C478 /* ViewController.swift */,
+				84C0999A27E2EB6500BA919D /* TranslationViewController.swift */,
 				8485CEE327D0B6C7002964DC /* XibTableViewController.swift */,
 				84814E7327D1F74C0009C4ED /* FirebaseStorageViewController.swift */,
+				84FF9B7027D8A20600BC8C72 /* LogInViewController.swift */,
+				84FF9B7227D8A23B00BC8C72 /* SignUpViewController.swift */,
 				8422574827D5DF0300B8D5AA /* Cell */,
 			);
 			path = Controller;
@@ -183,6 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				849C13A627CF62460082C478 /* UserViewModel.swift */,
+				84F67A6927DF4042003A0A95 /* EmailManager.swift */,
+				84FF9B7427D8A53900BC8C72 /* Email&PasswordAuth.swift */,
+				847F7C0527E1E0470004083B /* TranslatorViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -216,6 +234,7 @@
 				849C138627CF40620082C478 /* Frameworks */,
 				849C138727CF40620082C478 /* Resources */,
 				C36154E36510D97B3A52B1FC /* [CP] Embed Pods Frameworks */,
+				2B0255F076D800BEA2D25599 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,9 +286,9 @@
 				849C139927CF40640082C478 /* LaunchScreen.storyboard in Resources */,
 				8422574C27D5E35600B8D5AA /* CollectionViewCell.xib in Resources */,
 				8485CEE227D0B258002964DC /* DataPresentTableViewCell.xib in Resources */,
-				849C13AA27CF705F0082C478 /* GoogleService-Info.plist in Resources */,
 				849C139627CF40640082C478 /* Assets.xcassets in Resources */,
 				849C139427CF40620082C478 /* Main.storyboard in Resources */,
+				8468476E27DB18450065851B /* GoogleService-Info.plist in Resources */,
 				8485CEDE27D0B233002964DC /* ProfileTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +318,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2B0255F076D800BEA2D25599 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirestoreDatabase/Pods-FirestoreDatabase-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirestoreDatabase/Pods-FirestoreDatabase-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirestoreDatabase/Pods-FirestoreDatabase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C36154E36510D97B3A52B1FC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,13 +359,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F67A6A27DF4042003A0A95 /* EmailManager.swift in Sources */,
 				8422574727D5DED300B8D5AA /* DisplayTableViewCell.swift in Sources */,
+				84FF9B7527D8A53900BC8C72 /* Email&PasswordAuth.swift in Sources */,
 				849C13A727CF62460082C478 /* UserViewModel.swift in Sources */,
 				8422574B27D5E35600B8D5AA /* CollectionViewCell.swift in Sources */,
 				849C139127CF40620082C478 /* ViewController.swift in Sources */,
 				8485CEE427D0B6C7002964DC /* XibTableViewController.swift in Sources */,
 				8422574627D5DED300B8D5AA /* DataPresentTableViewCell.swift in Sources */,
+				84C0999B27E2EB6500BA919D /* TranslationViewController.swift in Sources */,
+				84FF9B7127D8A20600BC8C72 /* LogInViewController.swift in Sources */,
+				847F7C0627E1E0470004083B /* TranslatorViewModel.swift in Sources */,
 				8422574527D5DED300B8D5AA /* ProfileTableViewCell.swift in Sources */,
+				84FF9B7327D8A23B00BC8C72 /* SignUpViewController.swift in Sources */,
 				8422574127D5DE0D00B8D5AA /* FirebaseStorageViewController.swift in Sources */,
 				849C13A127CF4B5F0082C478 /* File.swift in Sources */,
 				849C138D27CF40620082C478 /* AppDelegate.swift in Sources */,
@@ -364,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -425,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -499,7 +543,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bipp.inc.FirestoreDatabase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bipp.inc.Firebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

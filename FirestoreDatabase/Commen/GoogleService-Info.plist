@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>257239281538-5ih2jdbf878po9dbo5j82l8u8q323e2c.apps.googleusercontent.com</string>
+	<string>66131301835-ug1hvbqt1rtpgud1084c2nbm093eo48c.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.257239281538-5ih2jdbf878po9dbo5j82l8u8q323e2c</string>
+	<string>com.googleusercontent.apps.66131301835-ug1hvbqt1rtpgud1084c2nbm093eo48c</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBNjkaqoWvyq8DvRbd99p3H5NPAo8eHISE</string>
+	<string>AIzaSyAQax2It7xrlA9gmSW4JSIBs-GdNpMwZC8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>257239281538</string>
+	<string>66131301835</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.bipp.inc.FirestoreDatabase</string>
+	<string>com.bipp.inc.Firebase</string>
 	<key>PROJECT_ID</key>
-	<string>firestoredb-25268</string>
+	<string>fir-ee8f4</string>
 	<key>STORAGE_BUCKET</key>
-	<string>firestoredb-25268.appspot.com</string>
+	<string>fir-ee8f4.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:257239281538:ios:8c5f0007e495f77dcf699b</string>
+	<string>1:66131301835:ios:9fd644f2c2807abe97924e</string>
 </dict>
 </plist>

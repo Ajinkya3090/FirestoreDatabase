@@ -12,5 +12,11 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
 pod 'FirebaseUI/Storage'
+pod 'SendGrid', :git => 'https://github.com/scottkawai/sendgrid-swift.git'
+pod 'SDWebImage'
+pod 'Loaf'
+pod 'GoogleMLKit/Translate', '2.6.0'
+pod 'GoogleMLKit/TextRecognition'
 
+pod 'AlgoliaSearchClient'
 end

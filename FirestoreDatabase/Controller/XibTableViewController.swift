@@ -26,15 +26,13 @@ class XibTableViewController: UIViewController {
             self.tblViewController.reloadData()
         }
     }
-    
 }
 
-
 extension XibTableViewController : UITableViewDataSource,UITableViewDelegate {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return 1
@@ -44,7 +42,6 @@ extension XibTableViewController : UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as? ProfileTableViewCell else {return UITableViewCell()}
             return cell
@@ -54,6 +51,5 @@ extension XibTableViewController : UITableViewDataSource,UITableViewDelegate {
             cell.fetchData(data: user)
             return cell
         }
-        
     }
 }

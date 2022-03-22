@@ -10,36 +10,30 @@ import UIKit
 class DisplayTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblEmail: UILabel!
-    @IBOutlet weak var lblContactNumber: UILabel!
-    @IBOutlet weak var lblPassword: UILabel!
+    @IBOutlet weak var lbl_Email: UILabel!
+    @IBOutlet weak var lbl_ContactNumber: UILabel!
+    @IBOutlet weak var lbl_Password: UILabel!
     
     func fetchData(data : ProfileData) {
-        
         if let name = data.name {
             lblName.text = "Name: \(name)"
         } else {
             lblName.isHidden = true
         }
         if let email = data.emailId {
-            lblEmail.text = "Email: \(email)"
+            lbl_Email.text = "Email: \(email)"
         } else {
-            lblEmail.isHidden = true
+            lbl_Email.isHidden = true
         }
         if let contact = data.contactNumber {
-            lblContactNumber.text = "Contact Number: \(contact)"
+            lbl_ContactNumber.text = "Contact Number: \(contact)"
         } else {
-            lblContactNumber.isHidden = true
+            lbl_ContactNumber.isHidden = true
         }
         if let password = data.password {
-            lblPassword.text = "Password: \(password)"
+            lbl_Password.text = "Password: \(password)"
         } else {
-            lblPassword.isHidden = true
+            lbl_Password.isHidden = true
         }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
     }
 }

@@ -8,11 +8,13 @@
 import Foundation
 import FirebaseDatabase
 import FirebaseCore
+import Firebase
 import FirebaseFirestore
 import FirebaseStorage
 
 protocol GetImage: AnyObject {
     func updateCollection()
+    func uploadSuccess()
 }
 
 class ValidationFields {
@@ -34,12 +36,11 @@ class ValidationFields {
     }
     
     // Profile Upload and Showing Function
-    
     static func validateSignInInput(validation : ProfileData) ->ProfileData? {
         guard let name = validation.name else {return nil }
-        guard let emailId = validation.emailId else { return nil}
-        guard let contactNumber = validation.contactNumber else { return nil}
-        guard let password = validation.password else { return nil}
+        guard let emailId = validation.emailId else { return nil }
+        guard let contactNumber = validation.contactNumber else { return nil }
+        guard let password = validation.password else { return nil }
         if name.isEmpty || emailId.isEmpty || contactNumber.isEmpty || password.isEmpty {
             return nil
         }else{
@@ -49,9 +50,7 @@ class ValidationFields {
     }
     
     func uploadDataToFirestore(data:ProfileData ,comlisherHandler: @escaping ()->(), failed: @escaping ()->()) {
-        
         let uploadData = firestoreDB.collection("User").document(data.name!)
-        
         uploadData.setData(["Name" : data.name ?? "", "Email" : data.emailId ?? "", "Contact Number" : data.contactNumber ?? "", "Password" : data.password ?? ""]) { error in
             if error == nil {
                 comlisherHandler()
@@ -60,7 +59,6 @@ class ValidationFields {
                 failed()
             }
         }
-        
     }
     
     //    func getDataFromFirestore(comlisherHandler: @escaping ()->()) {
@@ -83,27 +81,31 @@ class ValidationFields {
     //        }
     //    }
     
-    
     // Image Uplaod and Download Function
-    
     func getdataFrmFirebase(completed: @escaping ()->()) {
+        let imageUpload = UserDefaults.standard.string(forKey: "userName")
         firestoreDB.collection("User").addSnapshotListener { querySnapshot, error in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return completed()
             }
+            Analytics.logEvent("ImageUploadedInFBase", parameters: [
+                AnalyticsParameterSuccess : "Image_Upload Successfully by \(imageUpload!)"])
             self.users = []
             for document in querySnapshot!.documents {
                 let profile = ProfileData(dictionary: document.data())
                 self.users.append(profile)
                 completed()
             }
-            
         }
     }
     
     func dwnloadImgFrmStorage() {
+        self.imageArr.removeAll()
+        let imageDownlad = UserDefaults.standard.string(forKey: "userName")
         storageRefernce.child("Image").listAll { storageRef, error in
+            Analytics.logEvent("ImagedownloadedInFBase", parameters: [
+                AnalyticsParameterSuccess : "Image_Downloaded Successfully by \(imageDownlad!)"])
             for image in storageRef.items {
                 let path = image.fullPath
                 print(image.fullPath)
@@ -125,28 +127,39 @@ class ValidationFields {
     }
     
     // File Updload and Download Function
-    
     func uploadLocalData(path: URL,extensionString:String) {
+        let fileUplaod = UserDefaults.standard.string(forKey: "userName")
         let riversRef = storageRefernce.child("File").child(UUID().uuidString + extensionString)
-        let uploadTask = riversRef.putFile(from: path, metadata: StorageMetadata()) { metadata, error in
+        let _ = riversRef.putFile(from: path, metadata: StorageMetadata()) { metadata, error in
+            Analytics.logEvent("FileUploadInFBase", parameters: [
+                AnalyticsParameterSuccess : "File_Uploaded Successfully by \(fileUplaod!)"])
             guard metadata != nil else {
                 return
             }
+            self.delegate?.uploadSuccess()
         }
     }
     
     func downloadingPdf(completion:@escaping(_ url : [URL])->()){
+        self.url.removeAll()
         storageRefernce.child("File").listAll { storeRef, error in
-            for item in storeRef.items{
-                let path = item.fullPath
-                print(item.fullPath)
-                self.storageRefernce.child(path).downloadURL { url, err in
-                    guard let url = url else {
-                        return
+            if error != nil {
+                print(error!.localizedDescription)
+            }else {
+                let userName = UserDefaults.standard.string(forKey: "userName")
+                Analytics.logEvent("FiledownloadedInFBase", parameters: [
+                    AnalyticsParameterSuccess : "File_Downloaded Successfully by \(userName!)"])
+                for item in storeRef.items{
+                    let path = item.fullPath
+                    print(item.fullPath)
+                    self.storageRefernce.child(path).downloadURL { url, err in
+                        guard let url = url else {
+                            return
+                        }
+                        self.url.append(url)
+                        print(self.url.count)
+                        completion(self.url)
                     }
-                    self.url.append(url)
-                    print(url)
-                    completion(self.url)
                 }
             }
         }

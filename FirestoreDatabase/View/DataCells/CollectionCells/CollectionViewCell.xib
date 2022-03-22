@@ -35,7 +35,7 @@
             </constraints>
             <size key="customSize" width="156" height="183"/>
             <connections>
-                <outlet property="collectionCellImgView" destination="PMU-tQ-BKg" id="EU8-0V-HbH"/>
+                <outlet property="imgView_CollectionCell" destination="PMU-tQ-BKg" id="EU8-0V-HbH"/>
             </connections>
             <point key="canvasLocation" x="214.49275362318843" y="117.52232142857142"/>
         </collectionViewCell>

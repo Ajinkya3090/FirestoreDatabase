@@ -17,14 +17,11 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var tF_Email: UITextField!
     @IBOutlet weak var tF_ContactNo: UITextField!
     @IBOutlet weak var tF_Password: UITextField!
-    @IBOutlet weak var save_Btn: UIButton!
-    
+    @IBOutlet weak var btn_Save: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
     
     @IBAction func save_Btn_Action(_ sender: Any) {
         self.viewModel = ValidationFields()
@@ -32,11 +29,9 @@ class ProfileTableViewCell: UITableViewCell {
         guard let validateData = ValidationFields.validateSignInInput(validation:userData)else {return }
         viewModel?.uploadDataToFirestore(data: validateData, comlisherHandler: {
             print("Data upload Successful")
-            
             //      self.updateData()
         }, failed: {
             print("Data upload Un-Successful")
         })
     }
-    
 }

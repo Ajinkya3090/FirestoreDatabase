@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import MobileCoreServices
 import UniformTypeIdentifiers
 
@@ -13,6 +14,7 @@ class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDe
     
     var collectionViewModel : ValidationFields!
     
+    @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
     @IBOutlet weak var selectionSegCntrol: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,30 +22,35 @@ class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDe
     
     var url: [URL] = [URL](){
         didSet {
+            self.activitiIndicator.stopAnimating()
+            self.collectionView.isHidden = false
             self.collectionView.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.isHidden = true
+        
+        // For Image
         collectionViewModel = ValidationFields()
         collectionViewModel?.delegate = self
         collectionViewModel?.dwnloadImgFrmStorage()
         
+        // For Segmet Control
         selectionSegCntrol.selectedSegmentIndex = 0
         
+        // For FIle Downloading
         collectionViewModel.downloadingPdf { url in // Downloading file
+            self.activitiIndicator.stopAnimating()
+            self.collectionView.isHidden = false
             self.url = url
             print(url)
             //            self.collectionView.reloadData()
         }
-        
         // Register Collection Nib file
-        
         let nibCell = UINib(nibName: "CollectionViewCell", bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: "CollectionViewCell")
-        
-        
     }
     
     // Image and Segment Control
@@ -55,51 +62,45 @@ class FirebaseStorageViewController: UIViewController, UIImagePickerControllerDe
             imagePicker.allowsEditing = true
             present(imagePicker, animated: true, completion: nil)
         } else if selectionSegCntrol.selectedSegmentIndex == 1 {
-            clickFunction()
-            
+            fileFormatUpload()
             //collectionView.reloadData()
         }
-        
-        
-        
     }
     
     @IBAction func segTappedAction(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            //collectionView.reloadData()
+            collectionView.reloadData()
         } else if sender.selectedSegmentIndex == 1 {
             collectionView.reloadData()
         }
     }
     
     // Picking Imgage from Mobile Gallery
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let imageUpUserName = UserDefaults.standard.string(forKey: "userName")
         guard let image = info[.editedImage] as? UIImage else { return }
         guard let data = image.pngData() else { return }
-        
         collectionViewModel?.storageRefernce.child("Image").child(UUID().uuidString + ".jpg").putData(data, metadata: nil) {
-            [weak self] storageData, error in
-            self?.collectionViewModel!.imageArr.append(data)
+            [unowned self] storageData, error in
+            Analytics.logEvent("ImageUploadedInFBase", parameters: [
+                AnalyticsParameterSuccess : "Image_Uploded Successfully by\(imageUpUserName!)"])
+            self.collectionViewModel.dwnloadImgFrmStorage()
+            //self?.collectionViewModel!.imageArr.append(data)
         }
         print("//////////////", info.values)
         dismiss(animated: true, completion: nil)
-        
     }
-    
 }
-
 
 // MARK : UIDocumentPickerDelegate, UIDocumentMenuDelegate
 
-
 extension FirebaseStorageViewController: UIDocumentPickerDelegate, UIDocumentMenuDelegate{
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard let myURL = urls.first else {
-            return
-        }
+        guard let myURL = urls.first else { return }
         let last = myURL.pathExtension
-        self.url.append(myURL)
+        //self.url.append(myURL)   // append data first then uploads to data base for running this remove success protocol
+        self.activitiIndicator.startAnimating()
+        self.collectionView.isHidden = true
         if last == "pdf"  {
             collectionViewModel.uploadLocalData(path: myURL, extensionString: ".pdf")
         }
@@ -123,32 +124,27 @@ extension FirebaseStorageViewController: UIDocumentPickerDelegate, UIDocumentMen
         }
     }
     
-    
     public func documentMenu(_ documentMenu:UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
         documentPicker.delegate = self
         present(documentPicker, animated: true, completion: nil)
     }
-    
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         print("view was cancelled")
         dismiss(animated: true, completion: nil)
     }
     
-    func clickFunction(){
-        
-        let importMenu = UIDocumentPickerViewController(documentTypes: ["public.text", "com.apple.iwork.pages.pages", "public.data"], in: .import)
+    func fileFormatUpload(){
+        let importMenu = UIDocumentPickerViewController(documentTypes: ["public.text", "com.apple.iwork.pages.pages", "public.data"], in: .open)
         importMenu.delegate = self
         importMenu.modalPresentationStyle = .formSheet
         self.present(importMenu, animated: true, completion: nil)
     }
-    
 }
 
 // MARK : UICollectionViewDelegate & UICollectionViewDataSource
 
 extension FirebaseStorageViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if selectionSegCntrol.selectedSegmentIndex == 0 {
             return collectionViewModel?.imageArr.count ?? 0
@@ -161,27 +157,26 @@ extension FirebaseStorageViewController : UICollectionViewDelegate, UICollection
         if selectionSegCntrol.selectedSegmentIndex == 0 {
             guard let imgData = collectionViewModel?.imageArr[indexPath.row] else { return UICollectionViewCell()}
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorageCollectionViewCell", for: indexPath) as? StorageCollectionViewCell {
-                cell.img.widthAnchor.constraint(equalToConstant: ( width/2-10)).isActive = true
-                cell.img.heightAnchor.constraint(equalToConstant:( width/2-10)).isActive = true
-                
-                cell.img.image = UIImage(data: imgData)
+                cell.imgView.widthAnchor.constraint(equalToConstant: ( width/2-10)).isActive = true
+                cell.imgView.heightAnchor.constraint(equalToConstant:( width/2-10)).isActive = true
+                cell.imgView.image = UIImage(data: imgData)
                 return cell
             }
         }
         else {
             let xibCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
             let url = url[indexPath.row]
-            xibCell.collectionCellImgView.widthAnchor.constraint(equalToConstant: ( width/2-10)).isActive = true
-            xibCell.collectionCellImgView.heightAnchor.constraint(equalToConstant:( width/2-10)).isActive = true
+            xibCell.imgView_CollectionCell.widthAnchor.constraint(equalToConstant: ( width/2-10)).isActive = true
+            xibCell.imgView_CollectionCell.heightAnchor.constraint(equalToConstant:( width/2-10)).isActive = true
             switch url.pathExtension{
             case "pdf" :
-                xibCell.collectionCellImgView.image = UIImage(named: "pdf")
+                xibCell.imgView_CollectionCell.image = UIImage(named: "pdf")
             case "doc" :
-                xibCell.collectionCellImgView.image = UIImage(named: "doc")
+                xibCell.imgView_CollectionCell.image = UIImage(named: "doc")
             case "docx" :
-                xibCell.collectionCellImgView.image = UIImage(named: "docx")
+                xibCell.imgView_CollectionCell.image = UIImage(named: "docx")
             case "xlsx" :
-                xibCell.collectionCellImgView.image = UIImage(named: "xlsx")
+                xibCell.imgView_CollectionCell.image = UIImage(named: "xlsx")
             default :
                 break
             }
@@ -191,10 +186,18 @@ extension FirebaseStorageViewController : UICollectionViewDelegate, UICollection
     }
 }
 
-
 extension FirebaseStorageViewController : GetImage {
+    func uploadSuccess() {
+        self.url.removeAll()
+        self.collectionViewModel.downloadingPdf { url in
+            self.url = url
+        }
+    }
+    
     func updateCollection() {
         DispatchQueue.main.async {
+            self.activitiIndicator.stopAnimating()
+            self.collectionView.isHidden = false
             self.collectionView.reloadData()
         }
     }

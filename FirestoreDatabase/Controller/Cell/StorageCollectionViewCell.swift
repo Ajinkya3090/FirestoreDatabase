@@ -8,5 +8,5 @@
 import UIKit
 
 class StorageCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var imgView: UIImageView!
 }

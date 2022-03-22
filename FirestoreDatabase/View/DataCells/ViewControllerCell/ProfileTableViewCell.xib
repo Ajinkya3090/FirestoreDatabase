@@ -93,7 +93,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="save_Btn" destination="B1P-ff-wBc" id="4oV-lx-AP9"/>
+                <outlet property="btn_Save" destination="B1P-ff-wBc" id="4oV-lx-AP9"/>
                 <outlet property="tF_ContactNo" destination="rvz-mx-Dmt" id="BAe-lt-s8u"/>
                 <outlet property="tF_Email" destination="Lwo-ak-xPR" id="ElP-JA-Lfn"/>
                 <outlet property="tF_Name" destination="26E-3P-Wlr" id="vmx-mv-WzP"/>
