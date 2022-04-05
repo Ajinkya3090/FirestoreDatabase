@@ -28,14 +28,8 @@
 		849C139927CF40640082C478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849C139727CF40640082C478 /* LaunchScreen.storyboard */; };
 		849C13A127CF4B5F0082C478 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C13A027CF4B5F0082C478 /* File.swift */; };
 		849C13A727CF62460082C478 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C13A627CF62460082C478 /* UserViewModel.swift */; };
-		84B6949727EAFDDE0008BE21 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B6949627EAFDDE0008BE21 /* Config.plist */; };
-		84B6949927EAFEA50008BE21 /* TwilioVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6949827EAFEA50008BE21 /* TwilioVerificationViewController.swift */; };
-		84B6949B27EB04F20008BE21 /* SmsDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6949A27EB04F20008BE21 /* SmsDataStructure.swift */; };
 		84C0999B27E2EB6500BA919D /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0999A27E2EB6500BA919D /* TranslationViewController.swift */; };
 		84F67A6A27DF4042003A0A95 /* EmailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F67A6927DF4042003A0A95 /* EmailManager.swift */; };
-		84F76DF827EB16C800CB6189 /* RequestHelperOfHreokuapp .swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F76DF727EB16C800CB6189 /* RequestHelperOfHreokuapp .swift */; };
-		84F76DFA27EB213B00CB6189 /* VerifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F76DF927EB213A00CB6189 /* VerifyAPI.swift */; };
-		84F76DFC27EB327F00CB6189 /* VerifySMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F76DFB27EB327F00CB6189 /* VerifySMSViewController.swift */; };
 		84FF9B7127D8A20600BC8C72 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9B7027D8A20600BC8C72 /* LogInViewController.swift */; };
 		84FF9B7327D8A23B00BC8C72 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9B7227D8A23B00BC8C72 /* SignUpViewController.swift */; };
 		84FF9B7527D8A53900BC8C72 /* Email&PasswordAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9B7427D8A53900BC8C72 /* Email&PasswordAuth.swift */; };
@@ -67,14 +61,8 @@
 		849C139A27CF40640082C478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849C13A027CF4B5F0082C478 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		849C13A627CF62460082C478 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		84B6949627EAFDDE0008BE21 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Config.plist; path = Pods/Config.plist; sourceTree = "<group>"; };
-		84B6949827EAFEA50008BE21 /* TwilioVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioVerificationViewController.swift; sourceTree = "<group>"; };
-		84B6949A27EB04F20008BE21 /* SmsDataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsDataStructure.swift; sourceTree = "<group>"; };
 		84C0999A27E2EB6500BA919D /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
 		84F67A6927DF4042003A0A95 /* EmailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailManager.swift; sourceTree = "<group>"; };
-		84F76DF727EB16C800CB6189 /* RequestHelperOfHreokuapp .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestHelperOfHreokuapp .swift"; sourceTree = "<group>"; };
-		84F76DF927EB213A00CB6189 /* VerifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAPI.swift; sourceTree = "<group>"; };
-		84F76DFB27EB327F00CB6189 /* VerifySMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySMSViewController.swift; sourceTree = "<group>"; };
 		84FF9B7027D8A20600BC8C72 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		84FF9B7227D8A23B00BC8C72 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84FF9B7427D8A53900BC8C72 /* Email&PasswordAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Email&PasswordAuth.swift"; sourceTree = "<group>"; };
@@ -134,7 +122,6 @@
 		849C138027CF40620082C478 = {
 			isa = PBXGroup;
 			children = (
-				84B6949627EAFDDE0008BE21 /* Config.plist */,
 				849C138B27CF40620082C478 /* FirestoreDatabase */,
 				849C138A27CF40620082C478 /* Products */,
 				E1B032A2FADFC9DF4DCC656B /* Pods */,
@@ -170,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				849C13A027CF4B5F0082C478 /* File.swift */,
-				84B6949A27EB04F20008BE21 /* SmsDataStructure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,8 +180,6 @@
 				84814E7327D1F74C0009C4ED /* FirebaseStorageViewController.swift */,
 				84FF9B7027D8A20600BC8C72 /* LogInViewController.swift */,
 				84FF9B7227D8A23B00BC8C72 /* SignUpViewController.swift */,
-				84B6949827EAFEA50008BE21 /* TwilioVerificationViewController.swift */,
-				84F76DFB27EB327F00CB6189 /* VerifySMSViewController.swift */,
 				8422574827D5DF0300B8D5AA /* Cell */,
 			);
 			path = Controller;
@@ -217,8 +201,6 @@
 				84F67A6927DF4042003A0A95 /* EmailManager.swift */,
 				84FF9B7427D8A53900BC8C72 /* Email&PasswordAuth.swift */,
 				847F7C0527E1E0470004083B /* TranslatorViewModel.swift */,
-				84F76DF727EB16C800CB6189 /* RequestHelperOfHreokuapp .swift */,
-				84F76DF927EB213A00CB6189 /* VerifyAPI.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -305,7 +287,6 @@
 				8422574C27D5E35600B8D5AA /* CollectionViewCell.xib in Resources */,
 				8485CEE227D0B258002964DC /* DataPresentTableViewCell.xib in Resources */,
 				849C139627CF40640082C478 /* Assets.xcassets in Resources */,
-				84B6949727EAFDDE0008BE21 /* Config.plist in Resources */,
 				849C139427CF40620082C478 /* Main.storyboard in Resources */,
 				8468476E27DB18450065851B /* GoogleService-Info.plist in Resources */,
 				8485CEDE27D0B233002964DC /* ProfileTableViewCell.xib in Resources */,
@@ -379,7 +360,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F67A6A27DF4042003A0A95 /* EmailManager.swift in Sources */,
-				84B6949927EAFEA50008BE21 /* TwilioVerificationViewController.swift in Sources */,
 				8422574727D5DED300B8D5AA /* DisplayTableViewCell.swift in Sources */,
 				84FF9B7527D8A53900BC8C72 /* Email&PasswordAuth.swift in Sources */,
 				849C13A727CF62460082C478 /* UserViewModel.swift in Sources */,
@@ -391,16 +371,12 @@
 				84FF9B7127D8A20600BC8C72 /* LogInViewController.swift in Sources */,
 				847F7C0627E1E0470004083B /* TranslatorViewModel.swift in Sources */,
 				8422574527D5DED300B8D5AA /* ProfileTableViewCell.swift in Sources */,
-				84F76DFA27EB213B00CB6189 /* VerifyAPI.swift in Sources */,
 				84FF9B7327D8A23B00BC8C72 /* SignUpViewController.swift in Sources */,
 				8422574127D5DE0D00B8D5AA /* FirebaseStorageViewController.swift in Sources */,
 				849C13A127CF4B5F0082C478 /* File.swift in Sources */,
 				849C138D27CF40620082C478 /* AppDelegate.swift in Sources */,
 				84814E7627D21DBC0009C4ED /* StorageCollectionViewCell.swift in Sources */,
 				849C138F27CF40620082C478 /* SceneDelegate.swift in Sources */,
-				84B6949B27EB04F20008BE21 /* SmsDataStructure.swift in Sources */,
-				84F76DFC27EB327F00CB6189 /* VerifySMSViewController.swift in Sources */,
-				84F76DF827EB16C800CB6189 /* RequestHelperOfHreokuapp .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
